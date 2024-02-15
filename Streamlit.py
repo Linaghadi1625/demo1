@@ -144,9 +144,6 @@ fig.update_layout(xaxis_title='Month', yaxis_title='Total Number of Casualties',
 # Set y-axis range and tick marks
 fig.update_yaxes(range=[0, pivot_table.max().max() + 5000], tickmode='linear', tick0=0, dtick=5000, showgrid=True)
 
-# Add title
-fig.update_layout(title_text="Total Casualties by Road Surface")
-
 # Display the line chart
 st.plotly_chart(fig)
 st.divider()
@@ -197,7 +194,13 @@ else:
 surface_casualty_sum = filtered_df.groupby('Road_Surface_Conditions')['Number_of_Casualties'].sum().reset_index()
 
 # Create treemap
-fig = px.treemap(surface_casualty_sum, path=['Road_Surface_Conditions'], values='Number_of_Casualties')
+#fig = px.treemap(surface_casualty_sum, path=['Road_Surface_Conditions'], values='Number_of_Casualties')
+
+# Create treemap with title
+fig = px.treemap(surface_casualty_sum, 
+                 path=['Road_Surface_Conditions'], 
+                 values='Number_of_Casualties', 
+                 title="Total Casualties by Road Surface")
 
 # Display the treemap
 st.plotly_chart(fig)
