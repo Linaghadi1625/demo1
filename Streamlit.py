@@ -6,7 +6,7 @@ import seaborn as sns
 import plotly.express as px
 
 # Load the data
-df=pd.read_csv(r"F:\LINA\project-935\Data.csv")
+df=pd.read_csv("Data.csv")
 col1,col2=st.columns(2)
 with col1:
     st.title('ROAD ACCIDENT DASHBOARD')
