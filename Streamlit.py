@@ -33,7 +33,7 @@ if selected_year != "All":
 if selected_tab == "Data":
     st.write("The dataset provides detailed information about road accidents, including when and where they happened, how severe they were, and how many people and vehicles were involved. It also includes details like road conditions, weather, and whether the accidents occurred in urban or rural areas. This data helps us understand accident patterns and risks better, which can be used by policymakers and others to make roads safer.")
 
-    st.image("accidentt.jpg", width=400)
+    st.image("aci2.jpeg", width=400)
 
     st.write(f"Selected Urban/Rural Area: {selected_urban_rural}")
     st.write(f"Selected Year: {selected_year}")
