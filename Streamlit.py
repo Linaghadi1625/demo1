@@ -250,5 +250,4 @@ fig = px.bar(road_type_casualty_sum,
 
 # Show the chart
 st.plotly_chart(fig)
-
 st.divider()
