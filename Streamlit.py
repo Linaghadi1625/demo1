@@ -7,6 +7,7 @@ import plotly.express as px
 
 # Load the data
 df=pd.read_csv("Data.csv")
+st.title("ROAD ACCIDENT DASHBOARD")
 # Sidebar
 st.sidebar.title("Filters")
 selected_tab = st.sidebar.radio("Select Tab", ["Data", "Charts"])
