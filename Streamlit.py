@@ -10,7 +10,7 @@ df=pd.read_csv("Data.csv")
 col1,col2=st.columns(2)
 with col1:
     st.title('ROAD ACCIDENT DASHBOARD')
-    st.header('Accident Severity Distribution')
+    st.subheader("Analyzing Road Accident Data for Enhanced Safety Strategies")
 with col2:
     st.image('aci2.jpeg')
 # Display a colorful divider
@@ -36,7 +36,7 @@ else:
 
 if selected_year != "All":
     filtered_df = filtered_df[filtered_df['Year'] == selected_year]
-st.divider()
+st.markdown("""<div style="height: 2px; background-color: #fca311; margin: 15px 0;"></div>""", unsafe_allow_html=True)
 col1,col2=st.columns(2)
 with col1:
     st.image('accident.jpeg')
