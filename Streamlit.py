@@ -16,7 +16,7 @@ with col2:
 # Display a colorful divider
 # Display a colorful divider
 st.markdown("""<div style="height: 2px; background-color: #fca311; margin: 15px 0;"></div>""", unsafe_allow_html=True)
-
+st.write("The dataset provides detailed information about road accidents, including when and where they happened, how severe they were, and how many people and vehicles were involved. It also includes details like road conditions, weather, and whether the accidents occurred in urban or rural areas. This data helps us understand accident patterns and risks better, which can be used by policymakers and others to make roads safer.")
 
 #Slicer
 # Add a tab inside the sidebar
