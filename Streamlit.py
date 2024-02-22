@@ -246,16 +246,3 @@ fig = px.bar(road_type_casualty_sum,
 # Show the chart
 st.plotly_chart(fig)
 st.divider()
-# Visualization 8: Bar Chart - Total Casualties by Junction Detail
-junction_casualties = filtered_df.groupby('Junction_Detail')['Number_of_Casualties'].sum().reset_index()
-fig = px.bar(junction_casualties, x='Junction_Detail', y='Number_of_Casualties', 
-                title='Total Casualties by Junction Detail', labels={'Number_of_Casualties': 'Total Casualties'})
-st.plotly_chart(fig, use_container_width=True)
-
-
-
-# Visualization 9: Bar Chart - Sum of Casualties by Speed Limit
-speed_limit_casualties = filtered_df.groupby('Speed_limit')['Number_of_Casualties'].sum().reset_index()
-fig = px.bar(speed_limit_casualties, x='Speed_limit', y='Number_of_Casualties', 
-                title='Sum of Casualties by Speed Limit', labels={'Number_of_Casualties': 'Sum of Casualties'})
-st.plotly_chart(fig, use_container_width=True)
