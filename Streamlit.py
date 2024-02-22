@@ -19,28 +19,23 @@ st.markdown("""<div style="height: 2px; background-color: #fca311; margin: 15px 
 
 
 #Slicer
+# Add a tab inside the sidebar
+with st.sidebar.expander("Filter Options", expanded=True):
+    # Sidebar: Urban or Rural selection
+    urban_rural_options = ['All', 'Urban', 'Rural']  # Include "All" option
+    selected_urban_rural = st.selectbox("Select Urban/Rural", urban_rural_options)
 
-# Sidebar: Urban or Rural selection
-urban_rural_options = ['All', 'Urban', 'Rural']  # Include "All" option
-selected_urban_rural = st.sidebar.selectbox("Select Urban/Rural", urban_rural_options)
+    # Sidebar: Year selection
+    selected_year = st.selectbox("Select Year", ["All"] + df['Year'].unique().tolist())
 
-# Filter the data based on the selected urban/rural area
+# Filter the data based on the selected urban/rural area and year
 if selected_urban_rural == "All":
     filtered_df = df  # No filtering for "All" option
 else:
     filtered_df = df[df['Urban_or_Rural_Area'] == selected_urban_rural]
 
-# Sidebar: Year selection
-selected_year = st.sidebar.selectbox("Select Year", ["All"] + df['Year'].unique().tolist())
-
-# Filter the data based on the selected year(s)
-if selected_year == "All":
-    # No filtering for "All" option
-    pass
-else:
+if selected_year != "All":
     filtered_df = filtered_df[filtered_df['Year'] == selected_year]
-
-
 st.divider()
 col1,col2=st.columns(2)
 with col1:
